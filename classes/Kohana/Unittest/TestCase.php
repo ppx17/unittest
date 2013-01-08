@@ -62,7 +62,9 @@ abstract class Kohana_Unittest_TestCase extends PHPUnit_Framework_TestCase {
 	 */
 	public function tearDown()
 	{
-		$this->_helpers->restore_environment();
+        if($this->_helpers !== NULL)
+		    $this->_helpers->restore_environment();
+
 	}
 
 	/**
